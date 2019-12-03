@@ -1,12 +1,19 @@
 // call the packages we need
 // #1 Add express package to the app
+
 var express = require('express');
-var mongoose   = require('mongoose');
-var app = express();   
+
+// ===============================
+
+var app = express();
 var cors = require('cors');       
 
 // #2 Add body-parser package to the app
+
 var bodyParser = require('body-parser');
+
+// ===============================
+
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -16,10 +23,12 @@ app.use(bodyParser.json());
 
 // #3 Serve static content in folder frontend
 
-mongoose.connect('mongodb://localhost:27017/coc',
-{ useUnifiedTopology : true , useNewUrlParser : true});
+app.use(express.static("frontend"));
 
-var port = process.env.PORT || 8080; 
+// ===============================
+
+
+var port = process.env.PORT || 3000; 
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -31,8 +40,11 @@ router.get('/products/:pid', products.getProductById);
 
 // #4 Complete the routing for POST, PUT, DELETE
 
-// ===============================
+router.post('/api/products',products.addProduct);
+router.put('/api/products/:pid',products.updateProductById);
+router.delete('/api/products/:pid',products.deleteProductById);
 
+// ===============================
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
@@ -40,5 +52,7 @@ app.use('/api', cors(), router);
 
 // #10 Start the server
 
-// ===============================
-console.log('Magic happens on http://localhost:' + port);
+app.listen(port, function () {
+    console.log('Magic happens on http://localhost:' + port);
+});
+

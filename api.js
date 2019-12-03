@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Product = require('./models/productSchema')
 // #5 Change URL to your local mongodb
-const url = "";
+const url = "mongodb://localhost:27017/coc";
 // ===============================
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
