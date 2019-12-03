@@ -25,7 +25,7 @@ $(function () {
                         <td>${product.price}</td>
                    
                         <td>
-                            <a class="btn btn-primary btn-lg" href="userdetail.html?id=${product.serialno}">View</a>
+                            <a class="btn btn-primary btn-lg" href="productdetail.html?id=${product.serialno}">View</a>
                         </td>
                     </tr>` ;
                     $("#plist").append(row);
