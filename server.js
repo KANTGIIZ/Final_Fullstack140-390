@@ -37,9 +37,9 @@ var router = express.Router();              // get an instance of the express Ro
 var products = require('./api');
 router.get('/products', products.getAllProducts);
 router.get('/products/:pid', products.getProductById);
-router.post('/api/products',products.addProduct);
-router.put('/api/products/:pid',products.updateProductById);
-router.delete('/api/products/:pid',products.deleteProductById);
+router.post('/products',products.addProduct);
+router.put('/products/:pid',products.updateProductById);
+router.delete('/products/:pid',products.deleteProductById);
 
 // ===============================
 

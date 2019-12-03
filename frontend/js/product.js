@@ -18,11 +18,12 @@ $(function () {
                     var product = data[index];
                     var row = ` 
                     <tr>
+                        <td><img src="${product.photo}" height="42" width="42"></td>
                         <td>${product.serialno}</td>
                         <td>${product.name}</td>
                         <td>${product.category}</td>
                         <td>${product.price}</td>
-                        <td>${product.photo}</td>
+                   
                         <td>
                             <a class="btn btn-primary btn-lg" href="userdetail.html?id=${product.serialno}">View</a>
                         </td>
