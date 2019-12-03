@@ -1,8 +1,8 @@
 // call the packages we need
 // #1 Add express package to the app
-
-// ===============================
-
+var express = require('express');
+var bodyParser = require('body-parser');
+var mongoose   = require('mongoose');
 var app = express();   
 var cors = require('cors');       
 
