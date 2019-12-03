@@ -1,15 +1,12 @@
 // call the packages we need
 // #1 Add express package to the app
 var express = require('express');
-var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var app = express();   
 var cors = require('cors');       
 
 // #2 Add body-parser package to the app
-
-// ===============================
-
+var bodyParser = require('body-parser');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -19,8 +16,8 @@ app.use(bodyParser.json());
 
 // #3 Serve static content in folder frontend
 
-// ===============================
-
+mongoose.connect('mongodb://localhost:27017/coc',
+{ useUnifiedTopology : true , useNewUrlParser : true});
 
 var port = process.env.PORT || 8080; 
 
