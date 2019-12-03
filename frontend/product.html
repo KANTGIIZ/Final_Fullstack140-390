@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Final Test</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Product Management</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/product.html">Products</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col text-left">
+                <h1>Product List</h1>
+            </div>
+            <div class="col text-right">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Add New Product
+                </button>
+            </div>
+        </div>
+
+        <table class="table table-hover">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Photo</th>
+                    <th>Serial No.</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="plist">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add New Product Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Add New Product</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="form-group text-center">
+                        <img id="preview" width="200" height="200" src="https://image.izettle.com/product/1024/PIpgIMOPEeaR9VJdzMmApw-ypIVYM-9EemwmYlJuyvHzg.png" alt="">
+                    </div>                    
+                    <div class="form-group">
+                      <label for="">Photo URL</label>
+                      <input type="text"
+                        class="form-control" name="" id="photo" aria-describedby="helpId" placeholder="">
+                      <small id="helpId" class="form-text text-muted">Specify photo of product by using a URL</small>
+                    </div>
+                    <div class="form-group">
+                            <label for="">Serial No.</label>
+                            <input type="text"
+                              class="form-control" name="" id="serialno" aria-describedby="helpId" placeholder="">
+                            <small id="helpId" class="form-text text-muted">Specify serial number of product</small>
+                    </div>
+                    <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text"
+                              class="form-control" name="" id="name" aria-describedby="helpId" placeholder="">
+                            <small id="helpId" class="form-text text-muted">Specify name of product</small>
+                    </div>
+                    <div class="form-group">
+                            <label for="">Category</label>
+                            <input type="text"
+                              class="form-control" name="" id="category" aria-describedby="helpId" placeholder="">
+                            <small id="helpId" class="form-text text-muted">Specify category of product</small>
+                    </div>
+                    <div class="form-group">
+                            <label for="">Price</label>
+                            <input type="number"
+                              class="form-control" name="" id="price" aria-describedby="helpId" placeholder="">
+                            <small id="helpId" class="form-text text-muted">Specify price of product</small>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" id="savenewproduct" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/product.js"></script>
+</body>
+
+</html>
