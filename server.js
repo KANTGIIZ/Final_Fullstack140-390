@@ -31,7 +31,51 @@ router.get('/products/:pid', products.getProductById);
 
 // #4 Complete the routing for POST, PUT, DELETE
 
-// ===============================
+//Post APIs
+app.post('/api/products' , function (req , res){
+    //Insert data to Mongo
+    var newproduct = req.body;
+    var product = new Product(newproduct);
+    product.save(function (err){
+        if (err) res.status(500).json(err);
+        res.json({status: "Added a product"});
+    });   
+});
+
+//View All table
+app.get('/api/products', function(req,res){
+    Product.find(function(err,products){
+        if (err) res.status(500).json(err);
+        res.json(products);
+    })
+})
+//View search ID 
+app.get('/api/products/:id', function(req,res){
+    var id = req.params.id;
+    Product.find({"_id":id},function(err,products){
+        if (err) res.status(500).json(err);
+        res.json(products);
+    })
+})
+
+//Put=update
+app.put('/api/products/:id', function(req,res){
+    var id = req.params.id;
+    var updateproducts = req.body;
+    Product.findByIdAndUpdate(id, updateproducts, function(err){
+    if (err) res.status(500).json(err);
+    res.json({status: "Update a product"});   
+    })
+})
+
+//sel=Delete
+app.delete('/api/products/:id', function(req,res){
+    var id = req.params.id;
+    Product.findByIdAndRemove(id, function(err){
+    if (err) res.status(500).json(err);
+    res.json({status: "Deleate a product"});   
+    })
+})
 
 
 // REGISTER OUR ROUTES -------------------------------
@@ -40,5 +84,6 @@ app.use('/api', cors(), router);
 
 // #10 Start the server
 
-// ===============================
-console.log('Magic happens on http://localhost:' + port);
+app.listen(port, function () {
+    console.log('Magic happens on http://localhost:' + port);
+});
