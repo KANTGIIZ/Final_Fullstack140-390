@@ -33,13 +33,10 @@ var port = process.env.PORT || 3000;
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
-
+// #4 Complete the routing for POST, PUT, DELETE
 var products = require('./api');
 router.get('/products', products.getAllProducts);
 router.get('/products/:pid', products.getProductById);
-
-// #4 Complete the routing for POST, PUT, DELETE
-
 router.post('/api/products',products.addProduct);
 router.put('/api/products/:pid',products.updateProductById);
 router.delete('/api/products/:pid',products.deleteProductById);
